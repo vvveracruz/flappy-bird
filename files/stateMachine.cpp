@@ -1,6 +1,6 @@
 #include "stateMachine.hpp"
 
-namespace Ve {
+namespace vgg {
 
 void StateMachine::AddState( StateRef newState, bool isReplacing) {
     

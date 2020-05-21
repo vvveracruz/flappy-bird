@@ -5,7 +5,7 @@
 
 #include "state.hpp"
 
-namespace Ve {
+namespace vgg {
 
     typedef std::unique_ptr<State> StateRef;
 
