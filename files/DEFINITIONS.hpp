@@ -16,5 +16,8 @@
 #define PIPE_UP_FILEPATH "resources/res/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "resources/res/PipeDown.png"
 
+#define LAND_FILEPATH "resources/res/Land.png"
+
 #define PIPE_SPEED 200.0f
+#define PIPE_SPAWN_FREQUENCY 1.5f
 

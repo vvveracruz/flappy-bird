@@ -1,4 +1,5 @@
 #include "pipe.hpp"
+#include <iostream>
 
 namespace vgg {
 
@@ -43,12 +44,19 @@ void Pipe::MovePipes( float dt ) {
     
     for ( unsigned short int i = 0; i< pipeSprites.size( ) ; i++ ) {
         
-        sf::Vector2f position = pipeSprites.at( i ).getPosition( );
-        float movement = PIPE_SPEED * dt ;
-        
-        pipeSprites.at( i ).move( -movement , 0 );
-        
+        if ( pipeSprites.at( i ).getPosition( ).x < 0 - pipeSprites.at( i ).getGlobalBounds( ).width ) {
+            
+            pipeSprites.erase( pipeSprites.begin( ) + i );
+            
+        } else {
+            
+            float movement = PIPE_SPEED * dt ;
+            pipeSprites.at( i ).move( -movement , 0 );
+            
+        }
     }
+    
+    std::cout << pipeSprites.size( ) << std::endl;
     
 }
 

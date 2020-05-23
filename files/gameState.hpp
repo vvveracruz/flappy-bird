@@ -4,6 +4,7 @@
 #include "state.hpp"
 #include "game.hpp"
 #include "pipe.hpp"
+#include "land.hpp"
 
 namespace vgg {
 
@@ -20,12 +21,12 @@ public:
     
 private:
     GameDataRef _data;
-    
-    sf::Clock _clock;
-
     sf::Sprite _background;
     
     Pipe *pipe;
+    Land *land;
+    
+    sf::Clock clock;
     
 };
 }
