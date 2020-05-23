@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "mainMenuState.hpp"
+#include "gameState.hpp"
 #include "DEFINITIONS.hpp"
 
 namespace vgg {
@@ -41,7 +42,7 @@ void MainMenuState::HandleInput( ) {
         
         if ( _data -> input.IsSpriteClicked( _playButton, sf::Mouse::Left, _data -> window )) {
             
-            std::cout << "Go to game screen" << std::endl;
+            _data -> machine.AddState( StateRef( new GameState( _data ) ), true );
             
         }
     }
