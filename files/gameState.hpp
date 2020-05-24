@@ -5,6 +5,7 @@
 #include "game.hpp"
 #include "pipe.hpp"
 #include "land.hpp"
+#include "bird.hpp"
 
 namespace vgg {
 
@@ -25,6 +26,7 @@ private:
     
     Pipe *pipe;
     Land *land;
+    Bird *bird;
     
     sf::Clock clock;
     

@@ -16,9 +16,11 @@ void GameState::Init( ) {
     _data->assets.LoadTexture( "Pipe Up" , PIPE_UP_FILEPATH );
     _data->assets.LoadTexture( "Pipe Down" , PIPE_DOWN_FILEPATH );
     _data->assets.LoadTexture( "Land" , LAND_FILEPATH );
+    _data->assets.LoadTexture( "Bird Frame 1" , BIRD_FRAME_1_FILEPATH );
     
     pipe = new Pipe( _data );
     land = new Land( _data );
+    bird = new Bird( _data );
     
     _background.setTexture( this -> _data -> assets.GetTexture( "Game Background" ) );
     
@@ -38,8 +40,6 @@ void GameState::HandleInput( ) {
         
         if ( _data -> input.IsSpriteClicked( _background , sf::Mouse::Left , _data -> window ) ) {
             
-            
-            
         }
     }
 }
@@ -50,6 +50,8 @@ void GameState::Update( float dt ) {
     land -> MoveLand( dt );
     
     if ( clock.getElapsedTime( ).asSeconds( ) > PIPE_SPAWN_FREQUENCY ) {
+        
+        pipe -> RandomisePipeOffset( );
         
         pipe -> SpawnInvisiblePipe( );
         pipe -> SpawnBottomPipe( );
@@ -67,6 +69,7 @@ void GameState::Draw( float dt ) {
     _data -> window.draw( _background );
     pipe -> DrawPipes( );
     land -> DrawLand( );
+    bird -> DrawBird( );
     
     _data -> window.display( );
     

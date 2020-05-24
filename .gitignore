@@ -1,3 +1,4 @@
 flappy-bird.xcodeproj/
 .DS_Store
 a.out
+.o

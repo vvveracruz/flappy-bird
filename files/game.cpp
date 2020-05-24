@@ -1,9 +1,14 @@
 #include "game.hpp"
 #include "splashState.hpp"
 
+#include <stdlib.h>
+#include <time.h>
+
 namespace vgg {
 
 Game::Game( int width, int height , std::string title ) {
+    
+    srand( time( NULL ) ); // creating seed for randomisation of pipe position
     
     _data -> window.create( sf::VideoMode( width, height ), title, sf::Style::Close | sf::Style::Titlebar );
     
