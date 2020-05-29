@@ -44,6 +44,8 @@ void GameState::HandleInput( ) {
         
         if ( _data -> input.IsSpriteClicked( _background , sf::Mouse::Left , _data -> window ) ) {
             
+            bird -> Tap();
+            
         }
     }
 }
@@ -66,6 +68,8 @@ void GameState::Update( float dt ) {
     }
     
     bird -> Animate( dt );
+    bird -> Update( dt );
+    
 }
 
 void GameState::Draw( float dt ) {
